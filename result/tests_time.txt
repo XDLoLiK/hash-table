@@ -1,0 +1,9 @@
+                                          War-And-Peace.txt +
+                                          Dictionary.txt
+
+no_optimization                           Time, s: 6.200870
+crc32_optimization                        Time, s: 4.934214
+strcmp_optimization                       Time, s: 3.673661
+memset_optimization                       Time, s: 3.513415
+strcpy_optimization                       Time, s: 3.386313
+closing_google_chrome_optimization        Time, s: 3.285894
