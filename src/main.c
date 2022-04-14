@@ -16,20 +16,18 @@ int main(int argc, char **argv)
     FILE *insert_from = fopen("./test/War-And-Peace.txt", "r");
     FILE *search_from = fopen("./test/Dictionary.txt", "r");
     char *string = (char *)aligned_alloc(32, 32 * sizeof (char));
-    memset(string, 0, 32);
+    *(__m256 *)string = _mm256_set1_ps(0);
 
     timeit (    
         while (fscanf(insert_from, "%31s", string) != EOF) {
             hash_table_insert(ht, string, string);
             *(__m256 *)string = _mm256_set1_ps(0);
-            // memset(string, 0, 32);
         }
 
         for (int iter = 0; iter < 32; iter++) {
             while (fscanf(search_from, "%31s", string) != EOF) {
                 hash_table_find(ht, string);
                 *(__m256 *)string = _mm256_set1_ps(0);
-                // memset(string, 0, 32);
             }
             fseek(search_from, 0, SEEK_SET);   
         }

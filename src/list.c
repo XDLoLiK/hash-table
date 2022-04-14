@@ -23,8 +23,6 @@ struct list *list_new(const char *key, const char *value)
 		return NULL;
 	}
 
-	// strcpy(new_list->key,   key);
-	// strcpy(new_list->value, value);
 	_mm256_store_si256((__m256i *)new_list->key,   *(__m256i *)key);
 	_mm256_store_si256((__m256i *)new_list->value, *(__m256i *)value);
 	new_list->next  = NULL;
@@ -49,9 +47,6 @@ struct list *list_find(struct list *head, const char *key)
 {
 	struct list *current_list = head;
 	while (current_list) {
-		// if (strcmp(current_list->key, key) == 0) {
-		// 	return current_list;
-		// }
 		if (strcmp32_avx2(*(__m256i *)current_list->key, *(__m256i *)key) == 0) {
 			return current_list;
 		}
@@ -72,11 +67,6 @@ struct list *list_erase(struct list *head, const char *key)
 		list_free_node(head);
 		return new_head;
 	}
-	// if (strcmp(head->key, key) == 0) {
-	// 	struct list *new_head = head->next;
-	// 	list_free_node(head);
-	// 	return new_head;
-	// }
 
 	struct list *current_list = head;
 	while (current_list->next) {
@@ -86,12 +76,6 @@ struct list *list_erase(struct list *head, const char *key)
 			current_list->next = new_next;
 			break;
 		}
-		// if (strcmp(current_list->next->key, key) == 0) {
-		// 	struct list* new_next = current_list->next->next;
-		// 	list_free_node(current_list->next);
-		// 	current_list->next = new_next;
-		// 	break;
-		// }
 		current_list = current_list->next;
 	}
 
