@@ -10,17 +10,10 @@
 #ifndef LIST_H
 #define LIST_H
 
-#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <limits.h>
 #include <inttypes.h>
-
-#include <emmintrin.h>
-#include <nmmintrin.h>
-#include <immintrin.h>
-#include <xmmintrin.h>
 #include <x86intrin.h>
 
 struct list {
