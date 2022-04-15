@@ -34,7 +34,7 @@ MIPT laboratory work. Hash table acceleration. Comparison between different hash
 ## Acceleration
 All tests were made with the following parametres:
 * compilation flags: -O0
-* hash table size: 2^16 + 1
+* hash table size: 2^10 + 1
 * inserted from: War-And-Peace.txt
 * searched for from: Dictionary.txt (32 times)
 * secondary data structure - linked list
