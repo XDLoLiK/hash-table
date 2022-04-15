@@ -73,7 +73,7 @@ Time: 3.033858s (average of 5 tests) <br/>
 Profiler view results: Why is my laptop so loud?
 Solution: close google-chrome browser
 Implementation: obvious <br/>
-Time: 3.285894s (average of 5 tests) <br/>
+Time: 2.983501s (average of 5 tests) <br/>
 
 ## Conclusion
 acceleration ~ 2x <br/>
