@@ -13,8 +13,8 @@
 int main(int argc, char **argv)
 {
     struct hash_table *ht = hash_table_new((1 << 16) + 1);
-    FILE *insert_from = fopen("./test/Hamlet.txt", "r");
-    FILE *search_from = fopen("./test/Dictionary.txt", "r");
+    FILE *insert_from = fopen("Hamlet.txt", "r");
+    FILE *search_from = fopen("Dictionary.txt", "r");
     char *string = (char *)aligned_alloc(32, 32 * sizeof (char));
     *(__m256 *)string = _mm256_set1_ps(0);
 
