@@ -11,9 +11,9 @@
 #define HASH_TABLE_H
 
 #include "list.h"
-
-#define likely(x)   __builtin_expect(!!(x), 1)
-#define unlikely(x) __builtin_expect(!!(x), 0)
+#include "hashes.h"
+    
+#define hash crc32_hash
 
 struct hash_table {
     struct list **data;
@@ -31,8 +31,8 @@ struct list *hash_table_find(struct hash_table *ht, const char *key);
 int hash_table_erase(struct hash_table *ht, const char *key);
 int hash_table_insert(struct hash_table *ht, const char *key, const char *value);
 
-// HASH
-uint32_t murmurhash3_32 (const char *key, uint32_t len, uint32_t seed);
+// MAIN HASH
+uint32_t crc32_hash(const char *key);
 
 // EXTRA
 int hash_table_print_contents(struct hash_table *ht);
