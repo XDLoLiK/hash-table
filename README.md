@@ -70,8 +70,8 @@ Implementation: intrinsoc functions <br/>
 Time: 0.598305 (average of 5 tests) <br/>
 
 ### 5) "chrome" optimization <br/>
-Profiler view results: Why is my laptop so loud?
-Solution: close google-chrome browser
+Profiler view results: Why is my laptop so loud? <br/>
+Solution: close google-chrome browser <br/>
 Implementation: obvious <br/>
 Time: -inf (average of 5 tests) <br/>
 
