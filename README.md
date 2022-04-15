@@ -60,14 +60,14 @@ Time: 3.673661s (average of 5 tests) <br/>
 Profiler view results: memset has overtaken strcmp after its optimization, takes too much time now
 Solution: replace memset with some fancy avx instruction (\_mm256_set1_ps(0)) <br/>
 Implementation: intrinsoc functions <br/>
-Time: 3.513415s (average of 5 tests) <br/>
+Time: 3.386313s (average of 5 tests) <br/>
 
 ### 4) strcpy optimization <br/>
 Profiler view results: hash_table_find takes pretty much time, but can't be accelerated <br/>
 because it just gets called too often => optimize strcpy <br/>
 Solution: use avx cpy instruction (\_mm256_store_si256(...)) <br/>
 Implementation: intrinsoc functions <br/>
-Time: 3.386313s (average of 5 tests) <br/>
+Time: 3.033858s (average of 5 tests) <br/>
 
 ### 5) "chrome" optimization <br/>
 Profiler view results: Why is my laptop so loud?
