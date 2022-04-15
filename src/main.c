@@ -13,8 +13,8 @@
 int main(int argc, char **argv)
 {
     struct hash_table *ht = hash_table_new((1 << 16) + 1);
-    FILE *insert_from = fopen("War-And-Peace.txt", "r");
-    FILE *search_from = fopen("Dictionary.txt", "r");
+    FILE *insert_from = fopen("./test/War-And-Peace.txt", "r");
+    FILE *search_from = fopen("./test/Dictionary.txt", "r");
     char *string = (char *)aligned_alloc(32, 32 * sizeof (char));
     *(__m256 *)string = _mm256_set1_ps(0);
 
@@ -24,12 +24,11 @@ int main(int argc, char **argv)
             *(__m256 *)string = _mm256_set1_ps(0);
         }
 
-        for (int iter = 0; iter < 32; iter++) {
-            while (fscanf(search_from, "%31s", string) != EOF) {
+        while (fscanf(search_from, "%31s", string) != EOF) {
+            for (int iter = 0; iter < 64; iter++) {
                 hash_table_find(ht, string);
-                *(__m256 *)string = _mm256_set1_ps(0);
             }
-            fseek(search_from, 0, SEEK_SET);   
+            *(__m256 *)string = _mm256_set1_ps(0);
         }
     )
 

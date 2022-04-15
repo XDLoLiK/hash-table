@@ -33,22 +33,7 @@ int hash_table_insert(struct hash_table *ht, const char *key, const char *value)
          return 1;
     }
 
-    uint32_t elem_hash = 0;
-    asm (
-        ".intel_syntax noprefix\n\t"
-        "mov rcx, 8\n\t"
-        "mov rdi, %1\n\t"
-        "hash_insert:\n\t"
-        "       crc32 %0, dword ptr [rdi]\n\t"
-        "       add rdi, 4\n\t"
-        "       loop hash_insert\n\t"
-        ".att_syntax prefix\n\t"
-        : "=r"(elem_hash)
-        : "d"(key)
-        : "rcx", "rdi", "rax"
-    );
-    elem_hash %= ht->capacity;
-
+    uint32_t elem_hash = hash(key) % ht->capacity;
     struct list *elem = list_find(ht->data[elem_hash], key);
     if (elem == NULL) {
         ht->size++;
@@ -65,22 +50,7 @@ struct list *hash_table_find(struct hash_table *ht, const char *key)
          return NULL;
     }
     
-    uint32_t elem_hash = 0;
-    asm (
-        ".intel_syntax noprefix\n\t"
-        "mov rcx, 8\n\t"
-        "mov rdi, %1\n\t"
-        "hash_find:\n\t"
-        "       crc32 %0, dword ptr [rdi]\n\t"
-        "       add rdi, 4\n\t"
-        "       loop hash_find\n\t"
-        ".att_syntax prefix\n\t"
-        : "=r"(elem_hash)
-        : "d"(key)
-        : "rcx", "rdi", "rax"
-    );
-    elem_hash %= ht->capacity;
-
+    uint32_t elem_hash = hash(key) % ht->capacity;
     return list_find(ht->data[elem_hash], key);
 }
 
@@ -90,22 +60,7 @@ int hash_table_erase(struct hash_table *ht, const char *key)
         return 1;
     }
 
-    uint32_t elem_hash = 0;
-    asm (
-        ".intel_syntax noprefix\n\t"
-        "mov rcx, 8\n\t"
-        "mov rdi, %1\n\t"
-        "hash_erase:\n\t"
-        "       crc32 %0, dword ptr [rdi]\n\t"
-        "       add rdi, 4\n\t"
-        "       loop hash_erase\n\t"
-        ".att_syntax prefix\n\t"
-        : "=r"(elem_hash)
-        : "d"(key)
-        : "rcx", "rdi", "rax"
-    );
-    elem_hash %= ht->capacity;
-
+    uint32_t elem_hash = hash(key) % ht->capacity;
     if (list_find(ht->data[elem_hash], key) == NULL) {
         return 0;
     }
@@ -135,6 +90,27 @@ struct hash_table *hash_table_delete(struct hash_table *ht)
     free(ht);
 
     return NULL;
+}
+
+uint32_t crc32_hash(const char *key)
+{
+    uint32_t elem_hash = 0;
+
+    asm (
+        ".intel_syntax noprefix\n\t"
+        "mov rcx, 8\n\t"
+        "mov rdi, %1\n\t"
+        "hash%=:\n\t"
+        "       crc32 %0, dword ptr [rdi]\n\t"
+        "       add rdi, 4\n\t"
+        "       loop hash%=\n\t"
+        ".att_syntax prefix\n\t"
+        : "=r"(elem_hash)
+        : "d"(key)
+        : "rcx", "rdi", "rax"
+    );
+    
+    return elem_hash;
 }
 
 int hash_table_print_contents(struct hash_table *ht)
