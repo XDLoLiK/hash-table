@@ -33,7 +33,7 @@ bin/main.o: src/main.c /usr/include/stdc-predef.h inc/timeit.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h inc/hash_table.h \
- inc/list.h /usr/include/assert.h /usr/include/stdlib.h \
+ inc/list.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
@@ -53,25 +53,21 @@ bin/main.o: src/main.c /usr/include/stdc-predef.h inc/timeit.h \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
- /usr/include/strings.h /usr/lib/gcc/x86_64-linux-gnu/10/include/limits.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/syslimits.h \
- /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
- /usr/include/x86_64-linux-gnu/bits/local_lim.h \
- /usr/include/linux/limits.h \
- /usr/include/x86_64-linux-gnu/bits/posix2_lim.h /usr/include/inttypes.h \
+ /usr/include/strings.h /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/emmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/xmmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/mmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/mm_malloc.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/nmmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/smmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/tmmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/pmmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/popcntintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/x86intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/ia32intrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/immintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/mmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/xmmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/mm_malloc.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/emmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/pmmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/tmmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/smmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/popcntintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/wmmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/fxsrintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/xsaveintrin.h \
@@ -131,8 +127,6 @@ bin/main.o: src/main.c /usr/include/stdc-predef.h inc/timeit.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/clflushoptintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/wbnoinvdintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/pkuintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/x86intrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/ia32intrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/mm3dnow.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/fma4intrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/ammintrin.h \
@@ -140,4 +134,4 @@ bin/main.o: src/main.c /usr/include/stdc-predef.h inc/timeit.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/lwpintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/tbmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/mwaitxintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/clzerointrin.h
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/clzerointrin.h inc/hashes.h

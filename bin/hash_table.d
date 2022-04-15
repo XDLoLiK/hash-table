@@ -1,11 +1,11 @@
 bin/hash_table.o: src/hash_table.c /usr/include/stdc-predef.h \
- inc/hash_table.h inc/list.h /usr/include/assert.h \
+ inc/hash_table.h inc/list.h /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/long-double.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
- /usr/include/x86_64-linux-gnu/gnu/stubs-64.h /usr/include/stdio.h \
- /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -48,25 +48,21 @@ bin/hash_table.o: src/hash_table.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/strings.h /usr/lib/gcc/x86_64-linux-gnu/10/include/limits.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/syslimits.h \
- /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
- /usr/include/x86_64-linux-gnu/bits/local_lim.h \
- /usr/include/linux/limits.h \
- /usr/include/x86_64-linux-gnu/bits/posix2_lim.h /usr/include/inttypes.h \
+ /usr/include/strings.h /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/emmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/xmmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/mmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/mm_malloc.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/nmmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/smmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/tmmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/pmmintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/popcntintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/x86intrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/ia32intrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/immintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/mmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/xmmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/mm_malloc.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/emmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/pmmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/tmmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/smmintrin.h \
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/popcntintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/wmmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/fxsrintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/xsaveintrin.h \
@@ -126,8 +122,6 @@ bin/hash_table.o: src/hash_table.c /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/clflushoptintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/wbnoinvdintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/pkuintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/x86intrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/ia32intrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/mm3dnow.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/fma4intrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/ammintrin.h \
@@ -135,7 +129,4 @@ bin/hash_table.o: src/hash_table.c /usr/include/stdc-predef.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/lwpintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/tbmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/mwaitxintrin.h \
- /usr/lib/gcc/x86_64-linux-gnu/10/include/clzerointrin.h \
- /usr/include/time.h /usr/include/x86_64-linux-gnu/bits/time.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h
+ /usr/lib/gcc/x86_64-linux-gnu/10/include/clzerointrin.h inc/hashes.h
