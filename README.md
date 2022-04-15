@@ -63,8 +63,7 @@ Time: 3.513415s (average of 5 tests) <br/>
 
 ### 4) strcpy optimization <br/>
 Profiler view results: hash_table_find takes pretty much time, but can't be accelerated <br/>
-because it just gets called too often; scanf and malloc can't be accelerated as well => <br/>
-optimize strcpy
+because it just gets called too often => optimize strcpy <br/>
 Solution: use avx cpy instruction (\_mm256_store_si256(...)) <br/>
 Implementation: intrinsoc functions <br/>
 Time: 3.386313s (average of 5 tests) <br/>
