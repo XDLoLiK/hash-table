@@ -50,7 +50,7 @@ Implementation: inline assembly <br/>
 Time: 0.684802s (average of 5 tests) <br/>
 
 ### 2) strcmp optimization <br/>
-Profiler view results: strcmp is called 10 306 850 times, pretty slow => needs to be accelerated <br/>
+Profiler view results: strcmp is called more than 10 000 000 times, pretty slow => needs to be accelerated <br/>
 Solution: self-written assembly function <br/>
 Implementation: in hash table we only need to check the strings for equality, <br/>
 strings are all 32bytes-long, end with zeros => use ymm registers and avx instructions (vpcmpeqb, vpmovmskb) <br/>
